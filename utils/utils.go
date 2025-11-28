@@ -44,7 +44,7 @@ func CallerFrame() runtime.Frame {
 		// second return value is "more", not "ok"
 		frame, _ := frames.Next()
 		if (!strings.HasPrefix(frame.File, gormSourceDir) ||
-			strings.HasSuffix(frame.File, "_test.go")) && !strings.HasSuffix(frame.File, ".gen.go") {
+			strings.HasSuffix(frame.File, "_test.go")) && !strings.HasSuffix(frame.File, ".gen.go") && !strings.HasSuffix(frame.File, "do.go") {
 			return frame
 		}
 	}
